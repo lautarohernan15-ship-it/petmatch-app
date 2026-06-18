@@ -45,7 +45,7 @@
     </div>
 
     <script>
-        /* ========================================================================
+        /*
             DEFINICIÓN DEL ARCHIVO SECUENCIAL Y REGISTROS
             Estructura del Registro: 
             - Cod_Prod       : AN(6) -> Clave Principal (2 Fam. + 4 Secuenciales)
@@ -58,7 +58,7 @@
             Los registros se encuentran ordenados físicamente por su clave Cod_Prod. 
             Al agrupar por familia (AL, AC, SV), la secuencia permite aplicar de manera 
             directa y eficiente algoritmos de Corte de Control en el procesamiento.
-         ======================================================================== */
+         */
         const arch_maestro = [
             // Tipo_Articulo 1: Alimentos (Clave ALxxxx)
             { Cod_Prod: 'AL0001', Nombre: 'Alimento Premium Perro 15kg', Tipo_Articulo: 1, Precio_Unitario: 45000.00, Perfil_IA: 'Nutrición, Adulto, Mordida grande' },
@@ -76,9 +76,9 @@
 
         let arch_temporal_carrito = []; 
 
-        /* ========================================================================
+        /* 
             SIMULACIÓN DE LECTURA SECUENCIAL Y CORTE POR CATEGORÍA
-         ======================================================================== */
+        */
         function cargarCatalogo() {
             const divAlimentos = document.getElementById('cat-alimentos');
             const divAccesorios = document.getElementById('cat-accesorios');
@@ -105,9 +105,9 @@
             });
         }
 
-        /* ========================================================================
+        /* 
             ALGORITMO DE BÚSQUEDA POR CLAVE (Cod_Prod)
-         ======================================================================== */
+          */
         function agregarAlCarrito(claveBuscada) {
             const regEncontrado = arch_maestro.find(reg => reg.Cod_Prod === claveBuscada);
             
